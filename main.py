@@ -118,6 +118,127 @@ def signup():
             email_error=email_error)
 
     # Validate no spaces in password
+    for character in password:
+        if character == " ":
+            password_error = cgi.escape("Your password may not contain spaces.")
+            username = username
+            password = ""
+            verifypw = ""
+            email = email
+            return render_template('signup-form.html', title="Sign Up",
+                username=username,
+                password=password,
+                verifypw=verifypw,
+                email=email,
+                username_error=username_error,
+                password_error=password_error,
+                verifypw_error=verifypw_error,
+                email_error=email_error)
+
+    # Validate content present in verifypw field
+    if verifypw == "":
+        verifypw_error = cgi.escape("Please verify your password.")
+        username = username
+        password = ""
+        verifypw = ""
+        email = email
+        return render_template('signup-form.html', title="Sign Up",
+            username=username,
+            password=password,
+            verifypw=verifypw,
+            email=email,
+            username_error=username_error,
+            password_error=password_error,
+            verifypw_error=verifypw_error,
+            email_error=email_error)
+
+    # Check password and verifypw to see if they match
+    # You don't need to perform the same checks as on password
+    # Because if password passes, then verifypw should too
+    if password != verifypw:
+        verifypw_error = cgi.escape("Your passwords do not match!")
+        username = username
+        password = ""
+        verifypw = ""
+        email = email
+        return render_template('signup-form.html', title="Sign Up",
+            username=username,
+            password=password,
+            verifypw=verifypw,
+            email=email,
+            username_error=username_error,
+            password_error=password_error,
+            verifypw_error=verifypw_error,
+            email_error=email_error)
+
+    # Check email for spaces
+    for character in email:
+        if character == " ":
+            email_error = cgi.escape("Your email may not contain spaces.")
+            username = username
+            password = ""
+            verifypw = ""
+            email = email
+            return render_template('signup-form.html', title="Sign Up",
+                username=username,
+                password=password,
+                verifypw=verifypw,
+                email=email,
+                username_error=username_error,
+                password_error=password_error,
+                verifypw_error=verifypw_error,
+                email_error=email_error)
+
+    # Check length of email
+    if len(email) < 3 or len(password) > 20:
+        email_error = cgi.escape("Your email must be 3-20 characters.")
+        username = username
+        password = ""
+        verifypw = ""
+        email = email
+        return render_template('signup-form.html', title="Sign Up",
+            username=username,
+            password=password,
+            verifypw=verifypw,
+            email=email,
+            username_error=username_error,
+            password_error=password_error,
+            verifypw_error=verifypw_error,
+            email_error=email_error)
+
+    # Check for @ symbol
+    if "@" not in email:
+        email_error = cgi.escape("Your email must contain an @ symbol.")
+        username = username
+        password = ""
+        verifypw = ""
+        email = email
+        return render_template('signup-form.html', title="Sign Up",
+            username=username,
+            password=password,
+            verifypw=verifypw,
+            email=email,
+            username_error=username_error,
+            password_error=password_error,
+            verifypw_error=verifypw_error,
+            email_error=email_error)
+
+    # Check for . symbol
+    if "." not in email:
+        email_error = cgi.escape("Your email must contain an . symbol.")
+        username = username
+        password = ""
+        verifypw = ""
+        email = email
+        return render_template('signup-form.html', title="Sign Up",
+            username=username,
+            password=password,
+            verifypw=verifypw,
+            email=email,
+            username_error=username_error,
+            password_error=password_error,
+            verifypw_error=verifypw_error,
+            email_error=email_error)
 
 
 #Run the app

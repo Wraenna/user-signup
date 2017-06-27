@@ -9,10 +9,13 @@
     Verify Password
     Email Address
   #}
-      <label for="username">Username: <input type="text" name="username" value="{{ username }}"/><p class="error">{{username_error}}</p></label>
-      <label for="password">Password: <input type="text" name="password" /><p class="error">{{password_error}}</p></label>
-      <label for="verifypw">Verify Password: <input type="text" name="verifypw" /><p class="error">{{verifypw_error}}</p></label>
-      <label for="email">Email: <input type="text" name="email" value="{{ email }}"/><p class="error">{{email_error}}</p></label>
+      <p class="error"><label for="username">Username: <input type="text" name="username" value="{{ username }}"/></label> {{username_error}}</p>
+      <p></p>
+      <p class="error"><label for="password">Password: <input type="text" name="password" /></label> {{password_error}}</p>
+      <p></p>
+      <p class="error"><label for="verifypw">Verify Password: <input type="text" name="verifypw" /></label> {{verifypw_error}}</p>
+      <p></p>
+      <p class="error"><label for="email">Email: <input type="text" name="email" value="{{ email }}"/></label> {{email_error}}</p>
 
       <input type="submit" value="Sign Up"/>
     </form>
