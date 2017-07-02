@@ -240,6 +240,9 @@ def signup():
             verifypw_error=verifypw_error,
             email_error=email_error)
 
+    return render_template('welcome.html', title="Welcome!",
+        username=username)
+
 
 #Run the app
 app.run()
