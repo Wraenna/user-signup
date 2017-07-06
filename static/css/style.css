@@ -1,0 +1,43 @@
+body {
+  background-color: #EEEEEE;
+}
+
+
+h2 {
+  color: #222222;
+  font: 4em "Helvetica Neue", sans-serif;
+  font-weight: 100;
+  text-align: center;
+  padding-top: 2em;
+
+}
+
+.error {
+  color: #9e3030;
+  font-weight: 400;
+
+}
+
+form {
+  padding: 2em;;
+  margin: 0 auto;
+  width: 80%;
+  font: 1em "Helvetica Neue", sans-serif;
+  font-weight: 200;
+}
+
+input[type=text] {
+  margin: 0 auto;
+  width: 40%;
+
+}
+
+input[type=password] {
+  margin: 0 auto;
+  width: 40%;
+
+}
+
+input[type=submit] {
+  width: 20%;
+}

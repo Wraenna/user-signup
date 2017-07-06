@@ -71,20 +71,22 @@ def signup():
         verifypw_error += cgi.escape("Your passwords do not match! ")
 
     # Check email for spaces
-    if check_length(email):
-        email_error += cgi.escape("Your email may not contain spaces. ")
+
+    if email != "":
+        if check_length(email):
+            email_error += cgi.escape("Your email may not contain spaces. ")
 
     # Check length of email
-    if check_length(email):
-        email_error += cgi.escape("Your email must be 3-20 characters. ")
+        if check_length(email):
+            email_error += cgi.escape("Your email must be 3-20 characters. ")
 
     # Check for @ symbol
-    if "@" not in email:
-        email_error += cgi.escape("Your email must contain an @ symbol. ")
+        if "@" not in email:
+            email_error += cgi.escape("Your email must contain an @ symbol. ")
 
     # Check for . symbol
-    if "." not in email:
-        email_error += cgi.escape("Your email must contain an . symbol. ")
+        if "." not in email:
+            email_error += cgi.escape("Your email must contain an . symbol. ")
 
     if username_error != "" or password_error != "" or verifypw_error != "" or email_error != "":
         username = username
